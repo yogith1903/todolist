@@ -4,42 +4,81 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F7F7FB"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="20dp">
+
+    <!-- Header -->
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="My To-Do List"
-        android:textSize="28sp"
+        android:text="My Tasks"
+        android:textColor="#202124"
+        android:textSize="30sp"
         android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Stay productive today"
+        android:textColor="#777777"
+        android:textSize="15sp" />
+
+    <!-- Input area -->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
         <EditText
             android:id="@+id/taskInput"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="52dp"
             android:layout_weight="1"
-            android:hint="Enter a task" />
+            android:background="@drawable/task_input_background"
+            android:hint="Enter a new task"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/addButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ADD" />
+            android:layout_height="52dp"
+            android:layout_marginStart="8dp"
+            android:text="Add"
+            android:textAllCaps="false"
+            android:textSize="15sp" />
 
     </LinearLayout>
+
+    <!-- Section title -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="YOUR TASKS"
+        android:textColor="#777777"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <!-- Task list -->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/taskRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="10dp"
+        android:clipToPadding="false"
+        android:paddingBottom="10dp" />
 
 </LinearLayout>
